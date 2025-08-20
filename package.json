@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"node ws.js\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -20,6 +20,8 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/ws": "^8.18.1",
+    "concurrently": "^9.2.0",
     "typescript": "^5"
   }
 }
