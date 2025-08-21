@@ -4,6 +4,7 @@ import * as Y from 'yjs';
 import { IndexeddbPersistence } from 'y-indexeddb';
 import { WebsocketProvider } from 'y-websocket';
 import './page.css';
+import WangEditor from './components/wangEditor';
 
 // 创建共享的Y.js文档和文本
 const ydoc = new Y.Doc();
@@ -29,8 +30,8 @@ export default function Editor() {
     
     // ==================== 同步修改的核心部分 ====================
     // 处理文本变化 - 使用事务确保操作的原子性
-    const handleChange = useCallback((event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const newText: string = event.target.value;
+    const handleChange = useCallback((content: string) => {
+        const newText: string = content;
         const currentText: string = ytext.toString();
         
         // 计算差异并应用更改
@@ -147,13 +148,15 @@ export default function Editor() {
                 </ol>
             </div>
             
-            <textarea
+            {/* <textarea
                 rows={15}
                 onChange={handleChange}
                 value={value}
                 className="editor-textarea"
                 placeholder="开始输入内容，其他浏览器会实时同步..."
-            />
+            /> */}
+
+            <WangEditor handleChange={handleChange} ytext={ytext} />
             
             <div className="stats">
                 <span>字符数: {value.length}</span>

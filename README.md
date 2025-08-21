@@ -10,7 +10,7 @@
 
 - **前端框架**：React 18 + Next.js 14（App Router）
 - **协作引擎**：Yjs
-- **富文本编辑**：Slate.js/ Tiptap（待实现）
+- **富文本编辑**：wangeditor（待实现）
 - **实时通信**：WebSocket
 - **样式解决方案**：Tailwind CSS（推荐）
 - **类型检查**：TypeScript
@@ -70,6 +70,7 @@
 - 段落样式设置（标题、列表、引用等）
 - 插入链接、图片等媒体内容
 - 撤销 / 重做操作支持
+- word、pdf文档存储与回显
 
 #### 文档兼容性
 - Word 文档导入与导出
